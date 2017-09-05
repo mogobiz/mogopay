@@ -1,0 +1,46 @@
+<!--
+  ~ Copyright (C) 2015 Mogobiz SARL. All rights reserved.
+  -->
+
+<div>
+	<div class="form-group">
+		<div style="padding:0px 3px;">
+			<label for="paylineAccount">{{resourceBundle.payline_account}}</label>
+		</div>
+		<div class="col-xs-8 col-sm-6 col-md-6 col-lg-6" style="padding:0px 3px;">
+			<input type="text" class="form-control" id="paylineAccount" name="payline_account" placeholder="{{resourceBundle.payline_account}}" value="{{cbParam.paylineAccount}}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div style="padding:0px 3px;">
+			<label for="paylineKey">{{resourceBundle.payline_key}}</label>
+		</div>
+		<div class="col-xs-8 col-sm-6 col-md-6 col-lg-6" style="padding:0px 3px;">
+			<input type="text" class="form-control" id="paylineKey" name="payline_key" placeholder="{{resourceBundle.payline_key}}" value="{{cbParam.paylineKey}}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div style="padding:0px 3px;">
+			<label for="paylineContract">{{resourceBundle.payline_contract}}</label>
+		</div>
+		<div class="col-xs-8 col-sm-6 col-md-6 col-lg-6" style="padding:0px 3px;">
+			<input type="text" class="form-control" id="paylineContract" name="payline_contract" placeholder="{{resourceBundle.payline_contract}}" value="{{cbParam.paylineContract}}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div style="padding:0px 3px;">
+			<label for="paylineCustomPageCode">{{resourceBundle.payline_custom_code}}</label>
+		</div>
+		<div class="col-xs-8 col-sm-6 col-md-6 col-lg-6" style="padding:0px 3px;">
+			<input type="text" class="form-control" id="paylineCustomPageCode" name="payline_custom_payment_page_code" placeholder="{{resourceBundle.payline_custom_code}}" value="{{cbParam.paylineCustomPaymentPageCode}}" />
+		</div>
+	</div>
+	<div class="form-group">
+		<div style="padding:0px 3px;">
+			<label for="paylineTemplateURL">{{resourceBundle.payline_custom_url}}</label>
+		</div>
+		<div class="col-xs-8 col-sm-6 col-md-6 col-lg-6" style="padding:0px 3px;">
+			<input type="text" class="form-control" id="paylineTemplateURL" name="payline_custom_payment_template_url" placeholder="{{resourceBundle.payline_custom_url}}" value="{{cbParam.paylineCustomPaymentTemplateURL}}" pattern="https?://([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}((\/[^\/~,]+)+)?/?" errorMessage="{{resourceBundle.payline_invalid_url}}"/>
+		</div>
+	</div>
+</div>

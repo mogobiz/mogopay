@@ -1,0 +1,65 @@
+{
+  "CountryAdmin": {
+    "properties": {
+      "code": {
+        "type": "string",
+        "index": "not_analyzed"
+      },
+      "country": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "index": "not_analyzed"
+          },
+          "uuid": {
+            "type": "string",
+            "index": "not_analyzed"
+          }
+        }
+      },
+      "dateCreated": {
+        "type": "date",
+        "format": "dateOptionalTime"
+      },
+      "lastUpdated": {
+        "type": "date",
+        "format": "dateOptionalTime"
+      },
+      "level": {
+        "type": "long"
+      },
+      "name": {
+        "type": "string",
+        "index": "not_analyzed"
+      },
+      "parentCountryAdmin1": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "index": "not_analyzed"
+          },
+          "uuid": {
+            "type": "string",
+            "index": "not_analyzed"
+          }
+        }
+      },
+      "parentCountryAdmin2": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "index": "not_analyzed"
+          },
+          "uuid": {
+            "type": "string",
+            "index": "not_analyzed"
+          }
+        }
+      },
+      "uuid": {
+        "type": "string",
+        "index": "not_analyzed"
+      }
+    }
+  }
+}

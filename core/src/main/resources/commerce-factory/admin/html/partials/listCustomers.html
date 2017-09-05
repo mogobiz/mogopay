@@ -1,0 +1,73 @@
+<!--
+  ~ Copyright (C) 2015 Mogobiz SARL. All rights reserved.
+  -->
+
+<header ng-include src="'partials/header.html'"></header>
+<div>
+	<div class="panel panel-default">
+		<div class="panel-heading"><h3 class="panel-title">{{resourceBundle.customers_title}}</h3></div>
+		<div class="panel-body">
+			<form role="form" class="form-horizontal">
+				<div class="form-group" style="padding:0px 3px;" ng-show="allStores.length > 1">
+					<div style="padding:0px 3px;">
+						<label for="listCustomersStore">{{resourceBundle.customers_store}}</label>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding:0px 3px;">
+						<select class="form-control" id="listCustomersStore" ng-model="customersSelectedStore" ng-options="comp as comp for comp in allStores" ng-change="customersChangeStore()"></select>
+					</div>
+				</div>
+				<div class="form-group" style="padding:0px 3px;" ng-show="allStores.length == 1">
+					<div style="padding:0px 3px;">
+						<label>{{resourceBundle.customers_store}}</label>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding:0px 3px;">
+						<input type="text" disabled class="form-control" ng-model="customersSelectedStore"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<div style="padding:0px 3px;">
+						<label for="listCustomersEmail">{{resourceBundle.customers_email}}</label>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding:0px 3px;">
+						<input type="email" class="form-control" id="listCustomersEmail" autofocus/>
+					</div>
+				</div>
+				<div class="form-group" style="padding:0px 3px;">
+					<div style="padding:0px 3px;">
+						<label for="listCustomersLastName">{{resourceBundle.customers_lName}}</label>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding:0px 3px;">
+						<input type="text" class="form-control" id="listCustomersLastName"/>
+					</div>
+				</div>
+				<div class="form-group" style="padding:0px 3px;">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding:0px 3px;">
+						<input type="button" class="btn btn-default pull-right" value="{{resourceBundle.btn_search}}" ng-click="listCustomersSearch()"/>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="table-responsive" ng-show="customers.length > 0">
+		<table id="listCustomersTableResult" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th class="sort both" name="firstName" ng-click="listCustomersSortTable('firstName')">{{resourceBundle.customers_fName}}</th>
+					<th class="sort both" name="lastName" ng-click="listCustomersSortTable('lastName')">{{resourceBundle.customers_lName}}</th>
+					<th class="sort both" name="email" ng-click="listCustomersSortTable('email')">{{resourceBundle.customers_email}}</th>
+					<th>{{resourceBundle.customers_phone_number}}</th>
+					<th class="sort both" name="birthDate" ng-click="listCustomersSortTable('birthDate')">{{resourceBundle.customers_birthdate}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="customer in customers | orderBy:listCustomersSortField:listCustomersSortReverse">
+					<td><a href="javascript:void(0);" ng-click="gotToCustomerDetails($index);">{{customer.firstName}}</a></td>
+					<td>{{customer.lastName}}</td>
+					<td>{{customer.email}}</td>
+					<td>{{customer.address.telephone.phone}}</td>
+					<td>{{customer.birthDate | date:'dd/MM/yyyy'}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

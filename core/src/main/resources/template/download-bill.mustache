@@ -1,0 +1,50 @@
+subject: ignore
+<html>
+<head>
+    <title>Votre facture</title>
+</head>
+<body>
+<h1>Votre facture n&deg; {{transactionUuid}} du {{#fn_format_date}}{{transactionDate}}|dd/MM/yyyy{{/fn_format_date}}</h1>
+
+{{#cart}}
+    <table>
+        <tr>
+            <th>Designation</th>
+            <th>Qty</th>
+            <th>Px Unit.</th>
+            <th>Tax</th>
+            <th>Px Unit. TTC</th>
+            <th>Px Total</th>
+        </tr>
+        {{#cartItems}}
+            <tr>
+                <td style="width: 50%">{{productName}} -&gt; {{skuName}}</td>
+                <td style="text-align: right;" nowrap="true">{{quantity}}</td>
+                <td style="text-align: right;" nowrap="true">{{salePrice}}</td>
+                <td style="text-align: right;" nowrap="true">{{tax}}%</td>
+                <td style="text-align: right;" nowrap="true">{{saleEndPrice}}</td>
+                <td style="text-align: right;" nowrap="true">{{saleTotalEndPrice}}</td>
+            </tr>
+        {{/cartItems}}
+    </table>
+    <table>
+        <tr>
+            <td style="text-align: right; width:75%">Total TVA</td>
+            <td style="text-align: right; width:25%">{{taxAmount}}</td>
+        </tr>
+        <tr>
+            <td style="text-align: right; width:75%">Reduction</td>
+            <td style="text-align: right; width:25%">{{reduction}}</td>
+        </tr>
+        <tr>
+            <td style="text-align: right; width:75%">Shipping</td>
+            <td style="text-align: right; width:25%">{{shipping}}</td>
+        </tr>
+        <tr>
+            <td style="text-align: right; width:75%">Total</td>
+            <td style="text-align: right; width:25%">{{finalPrice}}</td>
+        </tr>
+    </table>
+{{/cart}}
+</body>
+</html>
